@@ -2,7 +2,7 @@
 {
     public class TrandoshanRacialAppearanceDefinition: RacialAppearanceBaseDefinition
     {
-        public override float MaximumScale => 1.3f;
+        public override float MaximumScale => 1.4f;
         public override int[] MaleHeads { get; } = { 2, 96, 97, 98, 101, 111, 123, 124, 125, 143, 147, 148, 162, 302, 303, 304, 305, 306 };
         public override int[] FemaleHeads { get; } = { 24, 50, 51, 126, 128, 129, 131, 135, 150, 157, 302, 303, 304, 305, 306 };
 
