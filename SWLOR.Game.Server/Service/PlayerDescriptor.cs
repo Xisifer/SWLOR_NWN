@@ -45,7 +45,8 @@ namespace SWLOR.Game.Server.Service
             AppearanceType.KelDor,
             AppearanceType.Droid,
             AppearanceType.Nautolan,
-            AppearanceType.Ewok
+            AppearanceType.Ewok,
+            AppearanceType.Gungan
         };
 
         private static readonly Dictionary<AbilityType, string[]> StatDescriptorAdjectives = new()

@@ -496,6 +496,16 @@ namespace SWLOR.Game.Server.Service.SkillService
             false,
             false)]
         Arkanian = 50,
+
+        [Skill(SkillCategoryType.Languages,
+            "Gungan",
+            20,
+            true,
+            "Ability to speak the Gungan language.",
+            false,
+            false,
+            false)]
+        Gungan = 51,
     }
 
     public class SkillAttribute : Attribute

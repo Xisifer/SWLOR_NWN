@@ -172,6 +172,7 @@ namespace SWLOR.Game.Server.Feature.GuiDefinition.ViewModel
             _armorAppearances[AppearanceType.Droid] = new DroidArmorAppearanceDefinition();
             _armorAppearances[AppearanceType.Nautolan] = new GeneralArmorAppearanceDefinition();
             _armorAppearances[AppearanceType.Ewok] = new GeneralArmorAppearanceDefinition();
+            _armorAppearances[AppearanceType.Gungan] = new GeneralArmorAppearanceDefinition();
         }
 
         private static void LoadWeaponAppearances()

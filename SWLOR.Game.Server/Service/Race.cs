@@ -251,6 +251,14 @@ namespace SWLOR.Game.Server.Service
                 LeftShinId = 1,
                 LeftFootId = 1
             };
+            _defaultRaceAppearancesMale[RacialType.Gungan] = new RacialAppearance
+            {
+                AppearanceType = AppearanceType.Gungan,
+                SkinColorId = 6,
+                HairColorId = 1,
+                HeadId = 300,
+                Scale = 1.05f
+            };
             _defaultRaceAppearancesMale[RacialType.Nautolan] = new RacialAppearance
             {
                 AppearanceType = AppearanceType.Nautolan,
@@ -486,6 +494,14 @@ namespace SWLOR.Game.Server.Service
                 LeftShinId = 1,
                 LeftFootId = 1
             };
+            _defaultRaceAppearancesFemale[RacialType.Gungan] = new RacialAppearance
+            {
+                AppearanceType = AppearanceType.Gungan,
+                SkinColorId = 6,
+                HairColorId = 1,
+                HeadId = 303,
+                Scale = 1.05f
+            };
             _defaultRaceAppearancesFemale[RacialType.Nautolan] = new RacialAppearance
             {
                 AppearanceType = AppearanceType.Nautolan,
@@ -521,30 +537,6 @@ namespace SWLOR.Game.Server.Service
             };
 
         }
-        /// <summary>
-        /// When a player enters the server, apply the proper scaling to their character.
-        ///
-        /// </summary>
-        [NWNEventHandler(ScriptName.OnModuleEnter)]
-            public static void ApplyWookieeScaling()
-            {
-                var player = GetEnteringObject();
-                if (!GetIsPC(player) || GetIsDM(player)) return;
-                var gender = GetGender(player);
-                var racialType = GetRacialType(player);
-
-                // Ensure the race + gender configuration exists.
-                if (gender == Gender.Male && !_defaultRaceAppearancesMale.ContainsKey(racialType) ||
-                    gender != Gender.Male && !_defaultRaceAppearancesFemale.ContainsKey(racialType))
-                    return;
-
-                var config = gender == Gender.Male
-                    ? _defaultRaceAppearancesMale[racialType]
-                    : _defaultRaceAppearancesFemale[racialType];
-
-                SetObjectVisualTransform(player, ObjectVisualTransform.Scale, config.Scale);
-            }
-
             /// <summary>
             /// Sets the default race appearance for the player's racial type.
             /// This should be called exactly one time on player initialization.
@@ -560,6 +552,7 @@ namespace SWLOR.Game.Server.Service
 
                 // Appearance, Skin, and Hair
                 SetCreatureAppearanceType(player, raceConfig.AppearanceType);
+                SetObjectVisualTransform(player, ObjectVisualTransform.Scale, raceConfig.Scale);
                 SetColor(player, ColorChannel.Skin, raceConfig.SkinColorId);
                 SetColor(player, ColorChannel.Hair, raceConfig.HairColorId);
 

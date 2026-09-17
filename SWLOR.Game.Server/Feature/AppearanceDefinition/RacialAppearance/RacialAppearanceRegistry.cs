@@ -32,6 +32,7 @@ namespace SWLOR.Game.Server.Feature.AppearanceDefinition.RacialAppearance
             Definitions[AppearanceType.Droid] = new DroidRacialAppearanceDefinition();
             Definitions[AppearanceType.Nautolan] = new NautolanRacialAppearanceDefinition();
             Definitions[AppearanceType.Ewok] = new EwokRacialAppearanceDefinition();
+            Definitions[AppearanceType.Gungan] = new GunganRacialAppearanceDefinition();
 
             _isLoaded = true;
         }

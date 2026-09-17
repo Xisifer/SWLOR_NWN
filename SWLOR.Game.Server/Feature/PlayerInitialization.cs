@@ -357,6 +357,9 @@ namespace SWLOR.Game.Server.Feature
                 case RacialType.Nautolan:
                     languages.Add(SkillType.Nautila);
                     break;
+                case RacialType.Gungan:
+                    languages.Add(SkillType.Gungan);
+                    break;
                 case RacialType.Ewok:
                     languages.Add(SkillType.Ewokese);
                     break;
@@ -390,6 +393,7 @@ namespace SWLOR.Game.Server.Feature
 
             Race.SetDefaultRaceAppearance(player);
             dbPlayer.OriginalAppearanceType = raceAppearance.AppearanceType;
+            dbPlayer.AppearanceScale = raceAppearance.Scale;
         }
 
         /// <summary>

@@ -42,6 +42,7 @@ namespace SWLOR.Game.Server.Service
                 { SkillType.KelDor, new TranslatorKelDor() },
                 { SkillType.Nautila, new TranslatorNautila() },
                 { SkillType.Ewokese, new TranslatorEwokese() },
+                { SkillType.Gungan, new TranslatorGungan() },
             };
         }
 
@@ -198,6 +199,7 @@ namespace SWLOR.Game.Server.Service
                 case SkillType.Ugnaught: r = 255; g = 193; b = 233; break;
                 case SkillType.Nautila: r = 76; g = 230; b = 104; break;
                 case SkillType.Ewokese: r = 112; g = 28; b = 28; break;
+                case SkillType.Gungan: r = 160; g = 180; b = 90; break;
             }
 
             return (r, g, b);
@@ -226,6 +228,7 @@ namespace SWLOR.Game.Server.Service
                 case SkillType.Ugnaught: return "Ugnaught";
                 case SkillType.Nautila: return "Nautila";
                 case SkillType.Ewokese: return "Ewokese";
+                case SkillType.Gungan: return "Gungan";
             }
 
             return "Basic";
@@ -285,6 +288,7 @@ namespace SWLOR.Game.Server.Service
                         new LanguageCommand("Ugnaught", SkillType.Ugnaught, new []{"ugnaught"}),
                         new LanguageCommand("Zabraki", SkillType.Zabraki, new []{"zabraki", "zabrak"}),
                         new LanguageCommand("Ewokese", SkillType.Ewokese, new []{"ewokese", "yubnub"}),
+                        new LanguageCommand("Gungan", SkillType.Gungan, new []{"gungan"}),
                     };
 
                     _languages = languages;
