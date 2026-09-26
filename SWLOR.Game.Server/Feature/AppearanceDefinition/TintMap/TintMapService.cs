@@ -387,6 +387,15 @@ namespace SWLOR.Game.Server.Feature.AppearanceDefinition.TintMap
                 invalidatePendingCarry);
         }
 
+        public static void SetPaletteColor(uint creature, TintMapMaterialSelection selection,
+            TintMapLayerType layer, int colorId)
+        {
+            if (colorId < 0 || colorId >= TintMapMaterialRegistry.PaletteColorCount ||
+                !selection.Material.Layers.Contains(layer))
+                return;
+            SetStoredColor(creature, selection, layer, colorId + 1, invalidatePendingCarry: true);
+        }
+
         private static void SetStoredColor(
             uint creature,
             TintMapMaterialSelection selection,
